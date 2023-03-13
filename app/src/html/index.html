@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22
+      viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💫</text></svg>" />
+
+  <title>Endless</title>
+  <meta name="description" content="Endless" />
+  <meta property="description" content="Endless" />
+  <meta name="keywords" content="jewellery, ring, NFC, voice,blockchain, lukso, NFT, metaverse, wearable, fashion, gold" />
+  <meta property="og:title" content="Endless" />
+  <meta property="og:url" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Endless" />
+  <meta property="twitter:domain" content="" />
+  <meta property="twitter:title" content="Endless" />
+  <meta property="twitter:description" content="Endless" />
+  <meta property="twitter:image" content="" />
+
+  <!-- main css -->
+  <link rel="stylesheet" href="src/css/main.css" />
+  <!-- tailwind -->
+  <link rel="stylesheet" href="src/css/build.css" />
+
+  <!-- tailwind cdn  ONLY USE in production @konrad -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- recorder css, remove later -->
+  <link rel="stylesheet" type="text/css" href="src/css/recorder.css">
+
+  <!-- z-index order
+  fogbox: -10
+  main: 10
+  pop up overlay: 20
+ -->
+
+</head>
+
+<body x-data="">
+
+  <!-- 3D canvas for threejs -->
+  <canvas id="bg"></canvas>
+
+  <!-- vantajs fogbox -->
+  <div id="fogbox" class="fogbox -z-10"></div>
+
+  <!-- main div -->
+  <main class="text-gray-700 mx-auto font-thin font-sans justify-center text-center leading-loose z-10">
+
+
+    <!-- first box -->
+    <div id="box1" class="md:w-1/2 lg:w-1/3  bg-white bg-opacity-90 rounded-lg m-5 p-10 text-2xl mb-96 lg:mb-5 ">
+      <h1 class="p-2 lg:p-5 text-7xl font-bold text-white uppercase"
+        style="  -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;"> Your voice in a ring </h1>
+
+      <span class="prose prose-lg prose-slate mx-auto lead bold"><strong>
+          <p class="pt-5"> Record a message. <br> Put it in a ring. <br> Replay it with a phone.</p>
+          <p class="pt-5"> Whenever you like, <br>wherever you go. </p>
+          <p class="pt-5"> Forever. </p>
+        </strong>
+      </span>
+
+      <!-- button -->
+      <div class="relative flex justify-center pt-10">
+        <a href="#box2">
+          <button type="button" class="">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10  animate-pulse " fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7
+              7-7-7" />
+            </svg>
+          </button>
+        </a>
+      </div>
+    </div>
+
+
+
+    <!-- second box -->
+    <div id="box2" class="md:w-1/2 lg:w-1/3  bg-white bg-opacity-90 rounded-lg m-5 p-10">
+
+      <div class="relative flex justify-center pt-10">
+        <a href="#box1">
+          <button type="button" class="">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10  animate-pulse " fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+            </svg>
+          </button>
+        </a>
+      </div>
+
+      <p class="p-5 text-xl font-bold"> HOW? </p>
+
+      <span class="prose prose-base prose-slate mx-auto">
+        <p class="transition ease-in-out delay-50 hover:scale-105 duration-200 px-3">
+          <strong> NFC: </strong> Endless rings contain an NFC chip readable by any smartphone. No app required.
+        </p>
+        <p class="transition ease-in-out delay-50 hover:scale-105 duration-200 px-3">
+          <strong>IPFS:</strong>
+          We use the Interplanetary File System and Filecoin, so your message will be accessible forever.
+        </p>
+        <p class="transition ease-in-out delay-50 hover:scale-105 duration-200 px-3">
+          <strong>Lukso:</strong>
+          We use Lukso so that each message has a unique identifier (hash), making sure your message is linked to your
+          ring, forever.
+        </p>
+        <p class="transition ease-in-out delay-50 hover:scale-105 duration-200 px-3">
+          <strong>Metaverse:</strong>
+          Each physical ring comes with a metaverse digital wearable, see <a href="https://builder.decentraland.org/items/789b8811-0a74-40b3-ad3b-987626db2a3c" class="decoration-1	font-light	" target="_blank"> an example on Decentraland </a> .
+        </p>
+        <p class="transition ease-in-out delay-50 hover:scale-105 duration-200 px-3">
+          <strong>NFT:</strong>
+          Your the soundwave of your message generates a minimalist NFT artpiece and mints it on Lukso.
+        </p>
+      </span>
+
+
+      <!-- read more button -->
+      <a href="https://docs.google.com/presentation/d/e/2PACX-1vQvSvterQ4WcSqsuO4kd7mdmpr6G-mdtM2QoGUj19qZe-wcMDP88DmDQjDGG4wOUvqokqTCmClt3WIU/pub?start=false&loop=false&delayms=3000"
+        target="_blank">
+        <button type="button" id="readmore-btn"
+          class="readmore-event my-5 mx-auto items-center px-4 py-2 rounded-full border border-gray-300 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-gray-500 focus:border-gray-500">Read
+          More</button>
+      </a>
+
+      <!-- buy pop up button CTA -->
+      <span class="text-white font-semibold">
+        <button id="open-btn" class="overlay-event bg-gradient-to-r hover:from-purple-700 hover:to-orange-600 from-pink-700 to-yellow-500
+      px-10 py-3 border border-gray-300 shadow-sm rounded-full" type="button"> Mint & Preorder</button>
+      </span>
+    </div>
+
+    <!-- POP UP OVERLAY -->
+    <div id="overlay" class="overlay-event" style="overflow-y: scroll">
+      <div id="overlay-inner" class="w-11/12 lg:w-2/3 mx-auto">
+        <div class="bg-white bg-opacity-90 rounded-lg m-5 px-0 lg:px-14 py-8">
+          <div class="min-h-full flex flex-col justify-center pb-12 pt-6 sm:px-6 lg:px-8">
+            <div class="sm:mx-auto sm:w-full sm:max-w-md">
+              <h2 class="mt-0 text-center text-3xl tracking-tight font-bold text-gray-900">Get Endless now</h2>
+              <p class="mt-2 text-center text-sm text-gray-600">
+                <span class="font-medium text-gray-600 hover:text-gray-500"> 100% money-back guarantee </span>
+              </p>
+            </div>
+
+            <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+              <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+
+                <form class="space-y-4" id="emailForm">
+
+                  <p> Simply connect your wallet and give us your email, so we can get in touch about shipment.</p>
+
+                  <div class="justify-center">
+                    <!-- wallet is connected -->
+                    <div class="border-none max-w-fit overflow-clip" x-show="Alpine.store('connected')" x-cloak
+                      x-on:click="checkWalletConnected()">
+                      Your wallet is connected. <div class="text-sm" x-html="Alpine.store('buyerAddress')"></div>
+                    </div>
+
+                    <!-- wallet is not connected -->
+                    <button
+                      class="px-6 border border-gray-300 shadow-sm rounded-full text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+                      x-show="!Alpine.store('connected')" x-cloak class="cursor-pointer"
+                      x-on:click="checkWalletConnected()"><img src="/src/media/metamask-icon.svg"
+                        style="display:inline" /> Connect wallet</button>
+                  </div>
+
+
+                  <div class="mx-auto pb-3">
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="email" name="email" id="email"
+                      class="bg-white px-6 border border-gray-300 shadow-sm rounded-full text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+                      placeholder="you@example.com">
+                  </div>
+
+                </form>
+                <!-- remove form onsubmit listener -->
+                <script>
+                  document.getElementById("emailForm").onsubmit = function () {
+                    return false;
+                  }
+                </script>
+
+              </div>
+            </div>
+
+            <!-- recorder -->
+            <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+              <div class="bg-white py-4 px-4 shadow sm:rounded-lg sm:px-10">
+                <p> Now record or upload your voice message (&lt; 10MB). </p>
+
+                <form hx-encoding='multipart/form-data' hx-post='/upload'
+                  _='on htmx:xhr:progress(loaded, total) set #progress.value to  (loaded/total)*100'>
+                  <input type="text" name="buyerAddress2" id="buyerAddress2" hidden
+                    x-bind:value="Alpine.store('buyerAddress')">
+                  <!-- label to replace ugly default button with nicer button -->
+                  <input type="file" id="nicer-button" name="file" hidden />
+                </form>
+
+                <!-- recoder.js controls -->
+                <div id="controls" class="mx-auto justify-center">
+                  <span class="relative z-0 inline-flex">
+                    <button type="button"
+                      class="relative inline-flex items-center px-4 py-2 rounded-l-full border border-gray-300 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-gray-500 focus:border-gray-500"
+                      id="recordButton">Record</button>
+                    <button type="button"
+                      class="-ml-px relative inline-flex items-center px-4 py-2 border  border-gray-300 bg-white text-base font-medium text-gray-700  hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1  focus:ring-gray-500 focus:border-gray-500"
+                      id="pauseButton" disabled>Pause</button>
+                    <button type="button"
+                      class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-full border border-gray-300 bg-white text-base font-medium  text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none  focus:ring-1 focus:ring-gray-500 focus:border-gray-500"
+                      id="stopButton" disabled>Stop</button>
+                  </span>
+                </div>
+                <div id="formats">Format: start recording to see sample rate</div>
+                <!-- <p><strong>Recordings:</strong></p> -->
+                <ol id="recordingsList" class="mx-auto justify-center"></ol>
+                <button x-show="Alpine.store('processingMint')" type="button"
+                  class="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-white bg-indigo-500 hover:bg-indigo-400 transition ease-in-out duration-150 cursor-not-allowed"
+                  disabled="">
+                  <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                    </path>
+                  </svg>
+                  Minting <span class="font-bold italic">&nbsp; your &nbsp;</span> NFT...
+                </button>
+                <div id="results"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="justify-center">
+            <button type="button" class="bg-gradient-to-r hover:from-purple-700 hover:to-orange-600 from-pink-700 to-yellow-500
+            px-10 py-3 border border-gray-300 shadow-sm rounded-full" x-on:click="makePaymentRequest()">
+
+              <span class="text-white font-semibold">Preorder</span>
+            </button>
+            <p class="py-3"> 10 LYXE (~$50) for NFT + Ring with Chip </p>
+
+            <div style="display:none">Flex Modal: <span x-text="Alpine.store('updateModal')"></span></div>
+
+            <div class="text-sm" x-show="Alpine.store('processingPayment')">
+              Processing Payment...
+            </div>
+            <div class="text-sm" x-show="Alpine.store('paymentCompleted')">
+              Payment Completed!
+            </div>
+            <div class="text-sm" x-show="Alpine.store('paymentFailed')">
+              Payment Failed!
+            </div>
+            <div class="text-sm" x-show="Alpine.store('checkoutStep')">
+              Checkout Step
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </main>
+
+  <footer>
+
+  </footer>
+
+  <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.138.0/build/three.module.js",
+          "OrbitControls": "https://unpkg.com/three@0.138.0/examples/jsm/controls/OrbitControls.js"
+        }
+      }
+    </script>
+
+  <script defer type="module" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <!-- <script defer type="module" src="src/node_modules/web3/dist/web3.min.js"></script> -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://unpkg.com/htmx.org@1.8.0"></script>
+
+  <!-- recorder scripts improts-->
+  <script defer src="src/js/recorder.js"></script>
+  <script defer src="src/js/app.js"></script>
+
+  <!-- overlay -->
+  <script defer src="src/js/overlay.js"></script>
+
+  <!-- metamask script import -->
+  <script defer src="src/js/metamask.js"></script>
+
+  <!-- main js file -->
+  <script defer type="module" src="src/js/main.js"></script>
+
+  <!-- vanta -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+  <script>
+    VANTA.FOG({
+      el: "#fogbox",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      highlightColor: 0xffe2a5,
+      midtoneColor: 0xff91a0,
+      lowlightColor: 0xbaadff,
+      baseColor: 0xffe1e1,
+      blurFactor: 0.50,
+      speed: 1.10,
+      zoom: 1.50
+    })
+  </script>
+
+
+
+
+  <script>
+    var art = `
+        ⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣶⣶⣿⣿⣿⣿⣿⣷⣶⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣶⣶⡿⠿⢿⣿⣶⣶⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀
+      ⠀⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠞⠋⠉⠀⠀⠀⠀⠀⠀⠀⠉⠛⢿⣿⣷⣄⠀⠀⠀⠀⠀
+      ⠀⠀⠀⣠⣾⣿⣿⣿⣿⠿⠛⠉⠁⠀⠀⠀⠀⠉⠙⠻⢿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣶⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣷⣄⠀⠀⠀
+      ⠀⠀⣼⣿⣿⣿⡿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣷⡀⠀⠀⠀⢀⣶⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣧⠀⠀
+      ⠀⣼⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣄⠀⠀⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣧⠀
+      ⢸⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⢂⣾⣿⣿⣿⠿⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡄
+      ⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡿⢡⣿⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⡇
+      ⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣱⣿⣿⣿⡿⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⡇
+      ⢿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⡟⣴⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⡇
+      ⠸⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⠏⢸⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⠁
+      ⠀⢻⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⡿⠃⠀⠀⠹⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⠃⠀
+      ⠀⠀⠹⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⣿⣿⣿⠟⠁⠀⠀⠀⠀⠈⢻⣿⣿⣿⣷⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⣿⣿⡿⠃⠀⠀
+      ⠀⠀⠀⠈⠻⣿⣿⣿⣿⣶⣤⣀⣀⠀⠀⠀⣀⣀⣤⣶⣿⣿⣿⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣶⣤⣀⣀⠀⠀⠀⢀⣀⣤⣶⣿⣿⣿⣿⠟⠁⠀⠀⠀
+      ⠀⠀⠀⠀⠀⠈⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠁⠀⠀⠀⠀⠀
+      ⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠻⠿⠿⠿⠿⠿⠟⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⢿⣿⣿⣿⠿⠿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀
+        `;
+    console.log(art);
+  </script>
+
+
+</body>
+
+</html>

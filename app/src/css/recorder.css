@@ -1,0 +1,62 @@
+/* a {
+  color: #337ab7;
+}
+p {
+  margin-top: 1rem;
+}
+a:hover {
+  color:#23527c;
+}
+a:visited {
+  color: #8d75a3;
+} */
+
+
+
+#controls {
+  display: flex;
+  margin-top: 2rem;
+  max-width: 28em;
+} 
+
+button {
+  
+
+}
+
+button:hover, button:focus {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+
+button:disabled {
+  pointer-events: none;
+  background: lightgray;
+}
+button:first-child {
+  margin-left: 0;
+}
+
+audio {
+  display: block;
+  width: 100%;
+  margin-top: 0.2rem;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+#formats {
+  margin-top: 0.5rem;
+  font-size: 80%;
+}
+
+#recordingsList{
+	max-width: 28em;
+}
